@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "testcode-quiz"
+version = "0.1.0"
+description = ""
+authors = ["Naoyaki <yappledore14@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+ruff = "^0.6.4"
+pytest = "^8.3.2"
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+select = ["ALL"]
+
+ignore = ["D101", "D100", "D103", "D104", "D400", "D415"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/{tests}/*" = ["S101"]
+
+[tool.ruff.lint.isort]
+known-third-party = ["fastapi", "pydantic", "starlette"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
