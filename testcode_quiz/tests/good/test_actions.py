@@ -25,12 +25,10 @@ def test_can_drive_if_18_or_older() -> None:
 
 
 @pytest.mark.parametrize(
-    "age",
+    ("age", "expected"),
     [
-        (17),
-        False,
-        (18),
-        True,
+        (17, False),
+        (18, True),
     ],
 )
 def test_18歳以上なら運転できて_18歳未満は運転できない(
